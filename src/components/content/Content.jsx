@@ -6,7 +6,7 @@ import CardioPage from './CardioPage/CardioPage';
 export default () => {
     return (
         <div className={style.appContent}>
-           <StrenghtsPage />
+           {/* <StrenghtsPage /> */}
            <CardioPage />
         </div>
     )

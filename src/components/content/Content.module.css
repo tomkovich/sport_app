@@ -99,3 +99,71 @@
 .cardioForm .formGroup button.cancel:hover {
     background: rgba(255, 71, 71, 0.8);
 }
+
+.trainingList {
+    width: 60%;
+    margin: 20px auto;
+}
+
+.trainingItem {
+    margin: 35px 0;
+    display: flex;
+    border-bottom: 2px solid #F1F1F1;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.itemID, .deleteItem {
+    position: absolute;
+}
+
+.itemID {
+    width: 20px;
+    height: 20px;
+    background-color: #0D15A3;
+    border-radius: 100%;
+    color: #fff;
+    text-align: center;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.trainingTime {
+    color: #C7C7C7;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.trainingTitle {
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+.trainingDate {
+    font-size: 13px;
+}
+
+.deleteItem {
+    width: 32px;
+    height: 32px;
+    background-color: #EA3030;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 32px;
+    color: #fff;
+    border-radius: 50%;
+    right: -7%;
+    cursor: pointer;
+}
+
+.total {
+    text-align: center;
+}
