@@ -5,7 +5,7 @@ import Content from './components/content/Content';
 
 export default () => {
   return (
-    <div className="app_container">
+    <div className="appContainer">
       <Header />
       <Content />
     </div>
