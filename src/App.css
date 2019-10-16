@@ -5,3 +5,10 @@
 .appContainer {
   font-family: 'Merriweather';
 }
+
+h1 {
+  text-align: center;
+  font-size: 22px;
+  color: rgb(20, 75, 100);
+  margin: 20px 0;
+}

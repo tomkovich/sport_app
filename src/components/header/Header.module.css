@@ -28,8 +28,8 @@
     background-color: #FFAE47;
 }
 
-.itemWrap a.active {
-    background-color: #FFAE47;
+.active {
+    background-color: #FFAE47 !important;
 }
 
 .itemWrap .cardio, .itemWrap .strenghts {

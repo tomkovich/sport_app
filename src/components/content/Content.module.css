@@ -71,7 +71,7 @@
     background-image: url('./../../assets/img/calendar.svg');
 }
 
-.cardioForm .formGroup button {
+.cardioForm button {
     color: #fff;
     font-size: 14px;
     font-weight: bold;
@@ -80,23 +80,23 @@
     margin: 10px 20px;
     cursor: pointer;
     padding: 20px 20px;
-    width: 100px;
+    width: 390px;
     transition: background .3s ease-in-out;
 }
 
-.cardioForm .formGroup button.save {
+.cardioForm button.save {
     background: rgba(255, 174, 71, 1);
 }
 
-.cardioForm .formGroup button.cancel {
+.cardioForm button.cancel {
     background: rgba(255, 71, 71, 1);
 }
 
-.cardioForm .formGroup button.save:hover {
+.cardioForm button.save:hover {
     background: rgba(255, 174, 71, 0.8);
 }
 
-.cardioForm .formGroup button.cancel:hover {
+.cardioForm button.cancel:hover {
     background: rgba(255, 71, 71, 0.8);
 }
 
@@ -166,6 +166,7 @@
 
 .total {
     text-align: center;
+    margin: 20px 0;
 }
 
 .cardioForm .formGroup button.save:disabled {

@@ -5,12 +5,8 @@ import TrainingItem from "../TrainingItem/TrainingItem";
 
 export default () => {
 
-  const { state, dispatch } = React.useContext(AppContext);
-
-  let deleteItem = id => {
-    dispatch({type: 'REMOVE_CARDIO_TRAINING_DATA', id})
-  };
-
+  const { state, deleteCardioItem } = React.useContext(AppContext);
+  
   return (
     <> 
       <div className={style.total}>
@@ -24,7 +20,7 @@ export default () => {
           id={index}
           date={t.date}
           time={t.time}
-          deleteItem={deleteItem}
+          deleteItem={deleteCardioItem}
         />
       ))}
     </>

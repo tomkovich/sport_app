@@ -1,15 +1,19 @@
-import React from 'react';
-import style from './../Content.module.css';
-import Button from '../Button/Button';
-import StrenghtsForm from './StrenghtsForm';
-import StrenghtList from './StrenghtList';
+import React, { useState } from "react";
+import style from "./../Content.module.css";
+import Button from "../Button/Button";
+import StrenghtsForm from "./StrenghtsForm";
+import StrenghtList from "./StrenghtList";
 
 export default () => {
-    return (
-        <div className={style.strenghtsPage}>
-           <Button />
-           <StrenghtsForm />
-           <StrenghtList />
-        </div>
-    )
-}
+
+  const [isToggle, setToggle] = useState(false)
+
+  return (
+    <div className={style.strenghtsPage}>
+      <h1>Your Strenght Trainings</h1>
+      <Button toggle={setToggle}/>
+      {isToggle && <StrenghtsForm toggle={setToggle}/>}
+      <StrenghtList />
+    </div>
+  );
+};

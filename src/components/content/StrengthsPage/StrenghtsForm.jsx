@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import style from "./../Content.module.css";
 import { AppContext } from "../../../App";
 
-export default () => {
-  const { dispatch } = React.useContext(AppContext);
+export default props => {
+  const { addStrenghtItem } = React.useContext(AppContext);
 
   const initialState = {
     title: "",
@@ -22,13 +22,26 @@ export default () => {
 
   let handleFormSubmit = event => {
     event.preventDefault();
-    dispatch({ type: "SET_STRENGHT_TRAINING_DATA", data });
+    props.toggle(false);
+    addStrenghtItem(data);
     setData({
       ...data,
       title: "",
       time: "",
       date: ""
     });
+  };
+
+  let formCancel = () => {
+    if (window.confirm("Are you sure?")) {
+      props.toggle(false);
+      setData({
+        ...data,
+        title: "",
+        time: "",
+        date: ""
+      });
+    }
   };
 
   return (
@@ -61,13 +74,13 @@ export default () => {
             name="date"
           />
         </div>
-        <div className={style.formGroup}>
-          <button type="submit" className={style.save}>
-            Save
-          </button>
-          <button className={style.cancel}>Cancel</button>
-        </div>
+        <button type="submit" className={style.save}>
+          Save
+        </button>
       </form>
+      <button className={style.cancel} onClick={formCancel}>
+        Cancel
+      </button>
     </div>
   );
 };

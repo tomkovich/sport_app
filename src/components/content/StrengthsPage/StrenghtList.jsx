@@ -5,11 +5,7 @@ import TrainingItem from "../TrainingItem/TrainingItem";
 
 export default () => {
 
-  const { state, dispatch } = React.useContext(AppContext);
-
-  let deleteItem = id => {
-    dispatch({type: 'REMOVE_STRENGHT_TRAINING_DATA', id})
-  };
+  const { state, deleteStrenghtItem } = React.useContext(AppContext);
 
   return (
     <>
@@ -26,7 +22,7 @@ export default () => {
           id={index}
           date={t.date}
           time={t.time}
-          deleteItem={deleteItem}
+          deleteItem={deleteStrenghtItem}
         />
       ))}
     </>

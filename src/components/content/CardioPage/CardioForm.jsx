@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import style from "./../Content.module.css";
 import { AppContext } from "../../../App";
 
-export default () => {
-
+export default props => {
   const initialState = {
     title: "",
     time: "",
-    date: "",
+    date: ""
   };
 
-
-  const { dispatch } = React.useContext(AppContext);
+  const { addCardioItem } = React.useContext(AppContext);
   const [data, setData] = useState(initialState);
 
   const handleInputChange = event => {
@@ -19,21 +17,31 @@ export default () => {
       ...data,
       [event.target.name]: event.target.value
     });
-
-    
   };
 
   const handleFormSubmit = event => {
     event.preventDefault();
- 
-    dispatch({type: 'SET_CARDIO_TRAINING_DATA', data})
+    props.toggle(true);
+    addCardioItem(data);
     setData({
       ...data,
       title: "",
       time: "",
-      date: "", 
-    })
-  }
+      date: ""
+    });
+  };
+
+  let formCancel = () => {
+    if (window.confirm("Are you sure?")) {
+      props.toggle(false);
+      setData({
+        ...data,
+        title: "",
+        time: "",
+        date: ""
+      });
+    }
+  };
 
   return (
     <div className={style.cardioForm}>
@@ -65,15 +73,13 @@ export default () => {
             name="date"
           />
         </div>
-        <div className={style.formGroup}>
-          <button
-            type="submit"
-            className={style.save} >
-            Save
-          </button>
-          <button className={style.cancel}>Cancel</button>
-        </div>
+        <button type="submit" className={style.save}>
+          Save
+        </button>
       </form>
+      <button onClick={formCancel} className={style.cancel}>
+        Cancel
+      </button>
     </div>
   );
 };
