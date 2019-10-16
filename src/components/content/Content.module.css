@@ -167,3 +167,7 @@
 .total {
     text-align: center;
 }
+
+.cardioForm .formGroup button.save:disabled {
+    background: #000;
+}
