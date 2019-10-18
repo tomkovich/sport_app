@@ -16,7 +16,7 @@ export default () => {
     updateCardioTraining,
     updateStrengthTraining,
   } = React.useContext(AppContext);
-  console.log(data)
+
   return (
     <div className={style.appContent}>
       <Route 

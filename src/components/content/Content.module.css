@@ -123,16 +123,20 @@
 .trainingList {
     width: 60%;
     margin: 20px auto;
+    border: 1px solid rgba(212, 212, 212, .7);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
 }
 
 .trainingItem {
-    margin: 35px 0;
     display: flex;
     border-bottom: 2px solid #F1F1F1;
     justify-content: space-between;
     position: relative;
     align-items: center;
     padding-bottom: 15px;
+    padding-left: 15px;
+    width: 75%;
+    margin: 35px auto;
 }
 
 .itemID, .deleteItem {
@@ -158,11 +162,13 @@
     color: #C7C7C7;
     font-size: 13px;
     margin-bottom: 5px;
+    text-align: left;
 }
 
 .trainingTitle {
     font-size: 16px;
     color: #000;
+    text-align: left;
     font-weight: bold;
 }
 

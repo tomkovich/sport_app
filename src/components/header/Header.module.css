@@ -6,8 +6,13 @@
     align-items: center;
 }
 
+.itemWrap.home {
+    width: 10%;
+}
+
 .itemWrap {
-    width: 50%;
+    border-right: 1px solid rgba(255, 255, 255, .3);
+    width: 45%;
     text-align: center;
     height: 100%;
 }

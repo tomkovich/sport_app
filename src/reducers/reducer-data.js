@@ -5,7 +5,7 @@ export const itemsData = {
 }
 
 export const reducerData = (state, action) => {
-    console.log(action.items)
+
   switch (action.type) {
     case ITEMS_FETCH_DATA_SUCCESS:
       return {

@@ -14,18 +14,20 @@ export default props => {
             <div className={style.total}>
               Total Trainings: {props.list.length}
             </div>
-            {props.list.map((t, index) => (
-              <TrainingItem
-                setIsSearch={props.setIsSearch}
-                key={index}
-                title={t.title}
-                id={index}
-                date={t.date}
-                time={t.time}
-                editTraining={props.editTraining}
-                deleteItem={props.deleteTraining}
-              />
-            ))}
+            <div className={style.trainingList}>
+              {props.list.map((t, index) => (
+                <TrainingItem
+                  key={index}
+                  setIsSearch={props.setIsSearch}
+                  title={t.title}
+                  id={index}
+                  date={t.date}
+                  time={t.time}
+                  editTraining={props.editTraining}
+                  deleteItem={props.deleteTraining}
+                />
+              ))}
+            </div>
           </>
         )
       )}
