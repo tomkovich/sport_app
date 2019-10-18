@@ -11,6 +11,7 @@ export default props => {
     }
   }, [props.data.items.length]);
 
+  
   return (
     <div>
       <h1>All trainings</h1>
