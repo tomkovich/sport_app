@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import style from "./../Content.module.css";
-import { AppContext } from "../../../App";
+import style from "./Content.module.css";
 
 export default props => {
   const initialState = {
@@ -9,26 +8,30 @@ export default props => {
     date: ""
   };
 
-  const { addCardioItem } = React.useContext(AppContext);
   const [data, setData] = useState(initialState);
+  const [required, setRequired] = useState(false);
 
-  const handleInputChange = event => {
+  let handleInputChange = event => {
     setData({
       ...data,
       [event.target.name]: event.target.value
     });
   };
 
-  const handleFormSubmit = event => {
+  let handleFormSubmit = event => {
     event.preventDefault();
-    props.toggle(true);
-    addCardioItem(data);
-    setData({
-      ...data,
-      title: "",
-      time: "",
-      date: ""
-    });
+    if (data.title !== "") {
+      props.toggle(false);
+      props.addTraining(data);
+      setData({
+        ...data,
+        title: "",
+        time: "",
+        date: ""
+      });
+    } else {
+      setRequired(true);
+    }
   };
 
   let formCancel = () => {
@@ -44,16 +47,18 @@ export default props => {
   };
 
   return (
-    <div className={style.cardioForm}>
+    <div className={style.formTraining}>
       <form onSubmit={handleFormSubmit}>
         <div className={style.formGroup}>
           <input
+            className={required ? `${style.error}` : ''}
             onChange={handleInputChange}
             value={data.title}
             type="text"
             placeholder="Title"
             name="title"
           />
+          {required && <span className={style.required}>Title is required!</span>}
         </div>
         <div className={style.formGroup}>
           <input
@@ -77,7 +82,7 @@ export default props => {
           Save
         </button>
       </form>
-      <button onClick={formCancel} className={style.cancel}>
+      <button className={style.cancel} onClick={formCancel}>
         Cancel
       </button>
     </div>

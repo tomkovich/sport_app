@@ -3,7 +3,8 @@ import style from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 import { withRouter } from 'react-router';
 
-const Header = () => {
+const Header = (props) => {
+
   return (
     <div className={style.header}>
       <div className={style.itemWrap}>

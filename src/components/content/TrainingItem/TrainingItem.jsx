@@ -2,7 +2,11 @@ import React from "react";
 import style from "./../Content.module.css";
 
 export default props => {
-  console.log(props)
+  let deleteTraining = () => {
+
+    props.setIsSearch(false)
+    props.deleteItem(props.id)
+  }
   return (
     <div className={style.trainingList}>
       <div className={style.trainingItem}>
@@ -12,9 +16,14 @@ export default props => {
           <div className={style.trainingTitle}>{props.title}</div>
         </div>
         <div className={style.trainingDate}>{props.date}</div>
-        <div className={style.deleteItem} onClick={() => props.deleteItem(props.id)}>
-          -
-        </div>
+        <div
+          className={style.deleteItem}
+          onClick={deleteTraining}
+        ></div>
+        <div
+          className={style.editItem}
+          onClick={() => props.editTraining(props.id)}
+        ></div>
       </div>
     </div>
   );

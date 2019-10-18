@@ -13,11 +13,29 @@
     border-radius: 100px;
     box-shadow: 3px 4px 14px rgba(13, 21, 163, 0.37);
     border: 0;
-    display: block;
-    margin: 0 auto;
+    display: inline-block;
     cursor: pointer;
     padding: 16px 45px 16px 70px;
     position: relative;
+}
+
+.search {
+    background: #fff;
+    border-radius: 100px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 12px 16px;
+    position: relative;
+    margin-left: 15px;
+    border: 3px solid #0D15A3;
+}
+
+.search input {
+    color: rgb(9, 11, 53);
+    font-size: 14px;
+    border: 0;
+    outline: none;
+    font-family: 'Merriweather';
 }
 
 .plus {
@@ -33,20 +51,22 @@
     font-size: 25px;
 }
 
-.cardioPage {
+.pageTraining {
     width: 100%;
+    text-align: center;
 }
 
-.cardioForm {
+.formTraining {
     margin: 50px auto;
     text-align: center;
 }
 
-.cardioForm  .formGroup {
+.formTraining  .formGroup {
     margin: 35px auto;
+    position: relative;
 }
 
-.cardioForm  .formGroup input {
+.formTraining  .formGroup input {
     width: 390px;
     border: 0;
     border-bottom: 2px solid #E7E7E7;
@@ -59,19 +79,19 @@
     background-size: 6%;
 }
 
-.cardioForm  .formGroup input[name="title"] {
+.formTraining  .formGroup input[name="title"] {
     background-image: url('./../../assets/img/document.svg');
 }
 
-.cardioForm  .formGroup input[name="time"] {
+.formTraining  .formGroup input[name="time"] {
     background-image: url('./../../assets/img/stopwatch.svg');
 }
 
-.cardioForm  .formGroup input[name="date"] {
+.formTraining  .formGroup input[name="date"] {
     background-image: url('./../../assets/img/calendar.svg');
 }
 
-.cardioForm button {
+.formTraining button {
     color: #fff;
     font-size: 14px;
     font-weight: bold;
@@ -84,19 +104,19 @@
     transition: background .3s ease-in-out;
 }
 
-.cardioForm button.save {
+.formTraining button.save {
     background: rgba(255, 174, 71, 1);
 }
 
-.cardioForm button.cancel {
+.formTraining button.cancel {
     background: rgba(255, 71, 71, 1);
 }
 
-.cardioForm button.save:hover {
+.formTraining button.save:hover {
     background: rgba(255, 174, 71, 0.8);
 }
 
-.cardioForm button.cancel:hover {
+.formTraining button.cancel:hover {
     background: rgba(255, 71, 71, 0.8);
 }
 
@@ -150,18 +170,32 @@
     font-size: 13px;
 }
 
-.deleteItem {
+.deleteItem, .editItem {
     width: 32px;
     height: 32px;
-    background-color: #EA3030;
     font-size: 30px;
     font-weight: bold;
     text-align: center;
     line-height: 32px;
+    position: absolute;
     color: #fff;
     border-radius: 50%;
-    right: -7%;
     cursor: pointer;
+    background-position: center;
+    background-size: 45%;
+    background-repeat: no-repeat;
+}
+
+.deleteItem {
+    right: -13%;
+    background-color: #EA3030;
+    background-image: url('./../../assets/img/delete.svg');
+}
+
+.editItem {
+    right: -7%;
+    background-color: #7830ea;
+    background-image: url('./../../assets/img/pencil-edit-button.svg');
 }
 
 .total {
@@ -169,6 +203,19 @@
     margin: 20px 0;
 }
 
-.cardioForm .formGroup button.save:disabled {
+.formTraining .formGroup button.save:disabled {
     background: #000;
+}
+
+.formTraining  .formGroup input.error {
+    border-color: red;
+}
+
+.formTraining  .required {
+    color: red;
+    font-size: 13px;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
 }
